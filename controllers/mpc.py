@@ -1,7 +1,7 @@
 import numpy as np
 import cvxpy as cp
 
-from sim.references_v2 import figure_eight
+from sim.references import figure_eight
 
 
 def wrap_angle(angle):
