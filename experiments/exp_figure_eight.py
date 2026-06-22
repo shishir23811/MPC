@@ -9,9 +9,9 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from controllers.mpc_v2 import ModelPredictiveController
+from controllers.mpc import ModelPredictiveController
 from sim.bicycle import KinematicBicycle
-from sim.references_v2 import figure_eight
+from sim.references import figure_eight
 
 
 def run_experiment():
@@ -77,7 +77,7 @@ def run_experiment():
     ax.legend()
     ax.grid(True)
 
-    output_path = os.path.join(ROOT_DIR, "results", "figure_eight_mpc_v2.png")
+    output_path = os.path.join(ROOT_DIR, "results", "figure_eight_mpc.png")
     fig.tight_layout()
     fig.savefig(output_path, dpi=200)
     print(f"Saved trajectory plot to: {output_path}")
@@ -90,7 +90,7 @@ def run_experiment():
     ax2.set_title("Figure-8 Tracking Error")
     ax2.grid(True)
     ax2.legend()
-    error_plot = os.path.join(ROOT_DIR, "results", "figure_eight_error_v2.png")
+    error_plot = os.path.join(ROOT_DIR, "results", "figure_eight_error.png")
     fig2.tight_layout()
     fig2.savefig(error_plot, dpi=200)
     print(f"Saved error plot to: {error_plot}")
